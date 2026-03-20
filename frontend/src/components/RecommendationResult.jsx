@@ -145,6 +145,10 @@ function getSoilKeyRR(cropName) {
   if (n.includes('wheat')||n.includes('barley')||n.includes('spinach')||n.includes('palak')||
       n.includes('coriander')||n.includes('methi')||n.includes('lettuce')||n.includes('carrot')||
       n.includes('onion')||n.includes('potato')||n.includes('radish')) return 'wheat';
+  if (n.includes('rose')||n.includes('marigold')||n.includes('jasmine')||n.includes('flower')||
+      n.includes('sunflower')||n.includes('tulsi')||n.includes('mint')||n.includes('basil')) return 'flower';
+  if (n.includes('mango')||n.includes('banana')||n.includes('papaya')||n.includes('coconut')||
+      n.includes('lemon')||n.includes('citrus')||n.includes('guava')) return 'tropical';
   return 'default';
 }
 function getSeasonKeyRR(cropName) {

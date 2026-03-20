@@ -45,9 +45,9 @@ function getCropKey(n) {
   if (n.includes('onion')||n.includes('garlic')||n.includes('potato')||n.includes('carrot')||
       n.includes('radish')||n.includes('turnip')||n.includes('beetroot')) return 'wheat'; // rabi veg
   if (n.includes('rose')||n.includes('marigold')||n.includes('jasmine')||n.includes('flower')||
-      n.includes('sunflower')) return 'chilli'; // flowering - warm
+      n.includes('sunflower')||n.includes('tulsi')||n.includes('mint')||n.includes('basil')) return 'flower';
   if (n.includes('mango')||n.includes('banana')||n.includes('papaya')||n.includes('guava')||
-      n.includes('coconut')||n.includes('lemon')||n.includes('citrus')) return 'rice'; // tropical fruit
+      n.includes('coconut')||n.includes('lemon')||n.includes('citrus')) return 'tropical';
   return 'default';
 }
 
