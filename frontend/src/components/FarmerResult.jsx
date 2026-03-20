@@ -32,9 +32,22 @@ const FERT_DETAILS = {
 function getCropKey(n) {
   n = (n||'').toLowerCase();
   if (n.includes('tomato')) return 'tomato';
-  if (n.includes('chilli')||n.includes('mirchi')||n.includes('capsicum')) return 'chilli';
-  if (n.includes('rice')||n.includes('paddy')) return 'rice';
-  if (n.includes('wheat')||n.includes('barley')) return 'wheat';
+  if (n.includes('chilli')||n.includes('mirchi')||n.includes('capsicum')||n.includes('pepper')) return 'chilli';
+  if (n.includes('rice')||n.includes('paddy')||n.includes('basmati')) return 'rice';
+  if (n.includes('wheat')||n.includes('barley')||n.includes('oat')) return 'wheat';
+  // Categorize unknown crops
+  if (n.includes('spinach')||n.includes('palak')||n.includes('lettuce')||n.includes('cabbage')||
+      n.includes('methi')||n.includes('coriander')||n.includes('mint')||n.includes('leafy')) return 'wheat'; // cool season
+  if (n.includes('brinjal')||n.includes('eggplant')||n.includes('okra')||n.includes('bhindi')||
+      n.includes('cucumber')||n.includes('gourd')||n.includes('pumpkin')||n.includes('squash')) return 'chilli'; // warm season veg
+  if (n.includes('maize')||n.includes('corn')||n.includes('sorghum')||n.includes('millet')||
+      n.includes('jowar')||n.includes('bajra')) return 'rice'; // kharif cereal
+  if (n.includes('onion')||n.includes('garlic')||n.includes('potato')||n.includes('carrot')||
+      n.includes('radish')||n.includes('turnip')||n.includes('beetroot')) return 'wheat'; // rabi veg
+  if (n.includes('rose')||n.includes('marigold')||n.includes('jasmine')||n.includes('flower')||
+      n.includes('sunflower')) return 'chilli'; // flowering - warm
+  if (n.includes('mango')||n.includes('banana')||n.includes('papaya')||n.includes('guava')||
+      n.includes('coconut')||n.includes('lemon')||n.includes('citrus')) return 'rice'; // tropical fruit
   return 'default';
 }
 

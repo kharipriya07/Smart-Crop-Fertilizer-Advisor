@@ -138,18 +138,29 @@ function getTranslatedMistakes(spaceType, t) {
 
 function getSoilKeyRR(cropName) {
   const n = (cropName || '').toLowerCase();
-  if (n.includes('tomato') || n.includes('chilli') || n.includes('capsicum') || n.includes('brinjal')) return 'tomato';
-  if (n.includes('rice') || n.includes('paddy')) return 'rice';
-  if (n.includes('wheat')) return 'wheat';
+  if (n.includes('tomato')||n.includes('chilli')||n.includes('capsicum')||n.includes('brinjal')||
+      n.includes('okra')||n.includes('bhindi')||n.includes('cucumber')||n.includes('gourd')) return 'tomato';
+  if (n.includes('rice')||n.includes('paddy')||n.includes('basmati')||
+      n.includes('maize')||n.includes('corn')||n.includes('mango')||n.includes('banana')) return 'rice';
+  if (n.includes('wheat')||n.includes('barley')||n.includes('spinach')||n.includes('palak')||
+      n.includes('coriander')||n.includes('methi')||n.includes('lettuce')||n.includes('carrot')||
+      n.includes('onion')||n.includes('potato')||n.includes('radish')) return 'wheat';
   return 'default';
 }
 function getSeasonKeyRR(cropName) {
   const n = (cropName || '').toLowerCase();
   if (n.includes('tomato')) return 'season.tomato';
-  if (n.includes('chilli') || n.includes('capsicum')) return 'season.chilli';
-  if (n.includes('rice')) return 'season.rice';
-  if (n.includes('wheat')) return 'season.wheat';
-  if (n.includes('spinach') || n.includes('methi') || n.includes('coriander')) return 'season.spinach';
+  if (n.includes('chilli')||n.includes('mirchi')||n.includes('capsicum')||n.includes('pepper')) return 'season.chilli';
+  if (n.includes('rice')||n.includes('paddy')||n.includes('basmati')) return 'season.rice';
+  if (n.includes('wheat')||n.includes('barley')||n.includes('oat')) return 'season.wheat';
+  if (n.includes('spinach')||n.includes('palak')||n.includes('methi')||n.includes('coriander')||
+      n.includes('lettuce')||n.includes('cabbage')||n.includes('carrot')||n.includes('onion')||
+      n.includes('potato')||n.includes('radish')) return 'season.spinach';
+  if (n.includes('okra')||n.includes('bhindi')||n.includes('cucumber')||n.includes('gourd')||
+      n.includes('pumpkin')||n.includes('brinjal')||n.includes('maize')||n.includes('corn')) return 'season.tomato';
+  if (n.includes('mango')||n.includes('banana')||n.includes('papaya')||n.includes('coconut')) return 'season.rice';
+  if (n.includes('rose')||n.includes('marigold')||n.includes('jasmine')) return 'season.chilli';
+  if (n.includes('mint')||n.includes('tulsi')||n.includes('basil')) return 'season.yearround';
   return 'season.default';
 }
 function RecommendSoilCard({ cropName, t }) {

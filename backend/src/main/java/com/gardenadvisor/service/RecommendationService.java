@@ -401,17 +401,29 @@ public class RecommendationService {
 
 
     private String getDefaultSeason(String cropName) {
-        if (cropName == null) return "Year-round (check local climate)";
+        if (cropName == null) return "Feb-May or Aug-Nov";
         String name = cropName.toLowerCase();
-        if (name.contains("tomato") || name.contains("chilli") || name.contains("capsicum") || name.contains("brinjal")) return "Feb-May, Aug-Nov";
-        if (name.contains("spinach") || name.contains("palak") || name.contains("coriander") || name.contains("methi") || name.contains("wheat")) return "Oct-Mar (Cool season)";
-        if (name.contains("rice") || name.contains("paddy")) return "Jun-Nov (Kharif / Monsoon season)";
-        if (name.contains("maize") || name.contains("corn")) return "Jun-Sep (Kharif) or Feb-May (Rabi)";
-        if (name.contains("okra") || name.contains("bhindi") || name.contains("cucumber")) return "Mar-Jun (Summer)";
-        if (name.contains("rose") || name.contains("marigold")) return "Oct-Feb (Best planting season)";
-        if (name.contains("tulsi") || name.contains("mint") || name.contains("curry")) return "Year-round (Best: Mar-Jun)";
-        if (name.contains("lemon") || name.contains("citrus")) return "Year-round (Best: Feb-Apr)";
-        return "Varies — consult local agriculture department";
+        if (name.contains("tomato") || name.contains("capsicum") || name.contains("brinjal")) return "Feb-May, Aug-Nov";
+        if (name.contains("chilli") || name.contains("mirchi") || name.contains("pepper")) return "Year-round (Best: Feb-Apr)";
+        if (name.contains("spinach") || name.contains("palak") || name.contains("coriander") ||
+            name.contains("methi") || name.contains("wheat") || name.contains("lettuce") ||
+            name.contains("cabbage") || name.contains("carrot") || name.contains("onion") ||
+            name.contains("potato") || name.contains("radish") || name.contains("garlic")) return "Oct-Mar (Rabi / Cool season)";
+        if (name.contains("rice") || name.contains("paddy") || name.contains("basmati")) return "Jun-Nov (Kharif / Monsoon season)";
+        if (name.contains("maize") || name.contains("corn") || name.contains("sorghum") ||
+            name.contains("jowar") || name.contains("bajra")) return "Jun-Sep (Kharif) or Feb-May (Rabi)";
+        if (name.contains("okra") || name.contains("bhindi") || name.contains("cucumber") ||
+            name.contains("gourd") || name.contains("pumpkin")) return "Mar-Jun (Summer vegetables)";
+        if (name.contains("rose") || name.contains("marigold") || name.contains("jasmine")) return "Oct-Feb (Best planting season)";
+        if (name.contains("tulsi") || name.contains("mint") || name.contains("basil") ||
+            name.contains("curry")) return "Year-round (Best: Mar-Jun)";
+        if (name.contains("lemon") || name.contains("citrus") || name.contains("orange")) return "Year-round (Best: Feb-Apr)";
+        if (name.contains("mango") || name.contains("banana") || name.contains("papaya") ||
+            name.contains("coconut") || name.contains("guava")) return "Feb-Apr (Planting season for fruit trees)";
+        if (name.contains("groundnut") || name.contains("soybean") || name.contains("sunflower") ||
+            name.contains("cotton")) return "Jun-Jul (Kharif oilseeds / cash crops)";
+        if (name.contains("grape") || name.contains("strawberry")) return "Nov-Jan (Best planting season)";
+        return "Feb-May or Aug-Nov (consult local agriculture department)";
     }
 
 }
