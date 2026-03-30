@@ -7,7 +7,7 @@ export default defineConfig({
     host: true,
     port: 10000,
     allowedHosts: [
-      "https://smart-crop-fertilizer-advisor.onrender.com"
+      "smart-crop-fertilizer-advisor.onrender.com"
     ]
   }
 })
